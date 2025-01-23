@@ -102,6 +102,9 @@ namespace Tumakov14
             return $"Номер счёта: {Id}\nТип: {Acc}\nБаланс: {_Balance}\n";
         }
 
+        /// <summary>
+        /// Метод отображает детали банковского счета
+        /// </summary>
         [Conditional("DEBUG_ACCOUNT")]
         public void DumpToScreen()
         {

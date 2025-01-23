@@ -17,15 +17,32 @@ namespace Tumakov14
             Console.ReadKey();
         }
 
+        /// <summary>
+        /// Использование предопределенного условного атрибута для условного выполнения кода. 
+        /// В классе банковский счет добавить метод DumpToScreen, который отображает детали банковского счета.
+        /// Для выполнения этого метода использовать условный атрибут, зависящий от символа условной компиляции DEBUG_ACCOUNT.
+        /// Протестировать метод DumpToScreen.
+        /// </summary>
         static void Task1()
         {
+            Console.WriteLine("Упражнение 14.1\n");
+
             BankAccount bankAccount = new BankAccount(123456, BankAccount.Account.Текущий);
             bankAccount.Put(40);
 
             bankAccount.DumpToScreen();
         }
+
+        /// <summary>
+        /// Упражнение 14.2 Создать пользовательский атрибут DeveloperInfoAttribute. 
+        /// Этот атрибут позволяет хранить в метаданных класса имя разработчика и, дополнительно, дату разработки класса.
+        /// Атрибут должен позволять многократное использование. 
+        /// Использовать этот атрибут для записи имени разработчика класса рациональные числа
+        /// </summary>
         static void Task2()
         {
+            Console.WriteLine("Упражнение 14.2\n");
+
             var attrs = typeof(Ratio).GetCustomAttributes(true);
 
             foreach (var attr in attrs)
@@ -38,8 +55,16 @@ namespace Tumakov14
             }
             
         }
+
+        /// <summary>
+        /// Домашнее задание 14.1. Создать пользовательский атрибут для класса из домашнего задания 13.1. 
+        /// Атрибут позволяет хранить в метаданных класса имя разработчика и название организации. 
+        /// Протестировать
+        /// </summary>
         static void Task3()
         {
+            Console.WriteLine("\nДомашнее задание 14.1\n");
+
             var attrs = typeof(Building).GetCustomAttributes(true);
 
             foreach (var attr in attrs)

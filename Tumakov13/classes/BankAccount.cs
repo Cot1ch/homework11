@@ -8,6 +8,7 @@ namespace Tumakov13
     {
         #region Fields
         private Guid _Id;
+        private string _Name;
         private decimal _Balance;
         private Account _Account;
         private Queue<BankTransaction> _Queue;
@@ -17,6 +18,12 @@ namespace Tumakov13
         public Guid Id
         {
             get { return _Id; }
+        }
+
+        public string Name
+        {
+            get { return _Name; }
+            set { _Name = value; }
         }
 
         public decimal Balance
@@ -37,8 +44,9 @@ namespace Tumakov13
         #endregion
 
         #region Constructors
-        public BankAccount(decimal balance, Account account)
+        public BankAccount(string name, decimal balance, Account account)
         {
+            _Name = name;
             _Account = account;
             _Balance = balance;
             _Id = Guid.NewGuid();
